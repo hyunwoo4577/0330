@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d-5</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+    body,html {background: #eee;}
+    .wrap {
+            display:flex; width:500px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: 0.5s;}
+    .wrap .card {         width:100%;
+            position:absolute; left:0; top:0; 
+            backface-visibility: hidden;}    
+    .wrap .card img {width:100%;}    
+    .wrap .front {transform: rotateY(0deg);}    
+    .wrap .back {transform: rotateY(180deg);}    
+    .wrap:hover {transform: rotateY(180deg);}
+    </style>
+        <!-- <style>
+            body, html {background:#eee;}
+            .wrap {}
+            .wrap .card_wrap { 
+                display:flex; width:500px;
+                position: relative;
+                transform-style: preserve-3d;
+                transition: 0.5s;
+            }
+            .wrap .card_wrap .card {
+                width:100%;
+                position:absolute; left:0; top:0; 
+                backface-visibility: hidden;
+            }
+            .wrap .card_wrap .card img {width:100%;}
+            .wrap .card_wrap .front {transform: rotateY(0deg);}
+            .wrap .card_wrap .back {transform: rotateY(180deg);}
+    
+            .wrap:hover .card_wrap {transform: rotateY(180deg);}
+        </style> -->
+    
+</head>
+<body>
+    <div class="wrap">
+        <div class="card front"><img src="./images/front.png" alt=""></div>
+        <div class="card back"><img src="./images/back.png" alt=""></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+</head>
+<style>
+    #frm {background:#eee; padding:20px; }
+    #frm #chk {appearance: none;}
+    #frm label {}
+    #frm label::before {
+        content:''; display: inline-block;
+        width: 20px; height: 20px;
+        background-size: 100%;
+        background: #fff; border-radius: 5px;
+        box-shadow: 0 0 1px rgba(0,0,0,0.2);
+        /* background:#ff0 url(./images/checked.png) no-repeat; */
+    }
+    #frm #chk:checked + label::before {
+        background: url(./images/checked.png);
+        background-size:100% ;
+    } 
+</style>
+<body>
+    <form action="#" method="post" id="frm">
+        <input type="checkbox" name="chk" id="chk"> <!--  checked : 상태속성 -->
+        <label for="chk">로그인 상태 유지</label>
+    </form>
+</body>
+</html>

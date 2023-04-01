@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        body {background: #f68a16;
+        text-align: center;}
+        .perspective {transform-style: preserve-3d;
+            perspective:1000px; margin-top: 100px;
+            display: inline-flex;
+            
+        }
+        .perspective .box {            
+            margin-right: 30px;
+            border: 10px solid #fff;
+            box-shadow:0 5px 10px rgba(0,0,0,0.5);
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+        }
+        .perspective .box:nth-child(1) {animation: z 0.5s linear alternate forwards, x 0.5s 2 linear alternate forwards 1s;}            
+        .perspective .box:nth-child(2) {animation: z 0.5s linear alternate forwards, y 0.5s 2 linear alternate forwards 1s;}            
+        .perspective .box img {
+            width: 130%;
+            position: relative; top: -160px;
+            }
+        @keyframes z {
+            0%{transform:  translateY(0) scale(0.5);}
+            100%{transform: translateY(500px) scale(1);}
+        }
+        @keyframes x {
+            0% {transform: translateY(500px) translateX(0);}
+            100% {transform: translateY(500px) translateX(-1500px) ;}}
+        @keyframes y {
+            0% {transform: translateY(500px) translateX(0);}
+            100% {transform: translateY(500px) translateX(1500px) ;}
+        }
+    </style>
+</head>
+<body>
+    <div class="perspective">
+        <div class="box"><img src="./images/burger1.jpg" alt=""></div>
+        <div class="box"><img src="./images/burger1.jpg" alt=""></div>
+    </div>
+</body>
+</html>
